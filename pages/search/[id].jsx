@@ -52,14 +52,14 @@ export default function Page({ wineBottle }) {
             className="col-span-2 row-span-3 -ml-16"
           />
           <div className="flex flex-col">
-            <h2 className="-ml-40 -mt-1 whitespace-nowrap text-end text-2xl font-bold text-secondary-500">
+            <h2 className="text-secondary-500 -ml-40 -mt-1 whitespace-nowrap text-end text-2xl font-bold">
               {wineBottle?.name}
             </h2>
-            <p className="text-end text-xl font-semibold italic text-secondary-500">
+            <p className="text-secondary-500 text-end text-xl font-semibold italic">
               {wineBottle?.price} lei
             </p>
-            <span className="-ml-24 mt-8 w-full justify-self-center">
-              {wineBottle?.description}
+            <span className="-ml-24 mt-8 w-60 justify-self-center">
+              {wineBottle?.pitch}
             </span>
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function Page({ wineBottle }) {
           </div>
 
           <Button
-            className="button full primary mx-auto rounded-3xl bg-secondary-500 px-20 py-4 text-lg font-semibold text-white"
+            className="button full primary bg-secondary-500 mx-auto rounded-3xl px-20 py-4 text-lg font-semibold text-white"
             onClick={() =>
               handleClicked({
                 amount: 1,

@@ -1,4 +1,5 @@
+import Cart from './cart';
 import Users from './users';
 import WineBottles from './wine-bottles';
 
-export { Users, WineBottles };
+export { Cart, Users, WineBottles };

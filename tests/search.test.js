@@ -23,6 +23,8 @@ const WineBottles = [
     rating: 4.7,
     reviews: 15,
     categories: ['Red', 'Bordeaux Blend', 'France', 'Family Event'],
+    pitch:
+      'The 2021 Schloss Johannisberg Gelblack Riesling Trocken offers a clear, intense and quite complex, very elegant bouquet with flinty, leafy and nuanced ripe, white fruit aromas intermingled with earthy tones.',
   },
   {
     id: 2,
