@@ -19,7 +19,11 @@ const WineBottleList = ({ search }) => {
   return (
     <div className="grid gap-4">
       {data.map((wineBottle) => (
-        <WineBottleCard key={wineBottle.id} wineBottle={wineBottle} />
+        <WineBottleCard
+          key={wineBottle.id}
+          search={search}
+          wineBottle={wineBottle}
+        />
       ))}
     </div>
   );
