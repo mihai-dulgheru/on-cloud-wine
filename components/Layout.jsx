@@ -7,7 +7,7 @@ const Layout = ({ children, title }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="flex h-screen w-full flex-col">
+    <div className="flex h-screen w-full flex-col bg-white">
       <header className="flex flex-row items-center border-2 border-b border-gray-200 bg-white px-4 py-3 shadow-md">
         <Image
           src={barsIcon}

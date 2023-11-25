@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { Logo } from '.';
 
 const Menu = ({ isOpen, onClose }) => {
   const router = useRouter();
@@ -23,13 +23,7 @@ const Menu = ({ isOpen, onClose }) => {
         }`}
       >
         <div className="grid place-items-center p-4">
-          <Image
-            src="/images/logo.jpg"
-            alt="logo"
-            width={160}
-            height={160}
-            onClick={() => handleItemClick('/')}
-          />
+          <Logo onClick={() => handleItemClick('/')} />
         </div>
         <ul className="flex flex-col">
           <li className="border-b border-gray-200">
