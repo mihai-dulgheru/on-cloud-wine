@@ -1,0 +1,75 @@
+.button {
+  @apply relative inline-block cursor-pointer rounded;
+}
+
+.button:hover {
+  text-decoration: none;
+}
+
+.button.square.primary:hover {
+  @apply bg-primary text-white;
+}
+
+button:focus {
+  outline: 0 !important;
+}
+
+button:active,
+a[role='button']:active {
+  outline: 0 !important;
+  position: relative;
+  top: 1px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  filter: opacity(0.75);
+}
+
+.button.full,
+.button.square {
+  @apply border-2 px-4 py-1 text-sm font-medium;
+}
+
+.button.mini {
+  @apply border bg-white px-3 py-1 text-sm;
+}
+
+.button.full.primary {
+  @apply border-primary bg-primary text-white;
+}
+
+.button.full.secondary {
+  @apply border-secondary bg-secondary text-white;
+}
+
+.button.full.accent {
+  @apply border-accent bg-accent text-white;
+}
+
+.button.square.primary,
+.button.mini.primary {
+  @apply border-primary text-primary;
+}
+
+.button.square.secondary,
+.button.mini.secondary {
+  @apply border-secondary text-secondary;
+}
+
+.button.square.accent,
+.button.mini.accent {
+  @apply border-accent text-accent;
+}
+
+.cancel {
+  @apply rounded-md border-2 border-gray-200 bg-white px-5 py-1.5 text-base text-gray-600 !important;
+}
+
+.confirm {
+  @apply bg-primary border-primary rounded-md border-2 px-5 py-1.5 text-base text-white !important;
+}
+
+.delete {
+  @apply rounded-md border-2 border-red-400 bg-white px-5 py-1.5 text-base text-red-600 !important;
+}
