@@ -7,7 +7,7 @@ const Logo = (props) => {
       alt="logo"
       width={160}
       height={160}
-      className="w-auto cursor-pointer"
+      className="w-auto"
       {...props}
     />
   );
