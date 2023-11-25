@@ -5,9 +5,5 @@ export default function handler(req, res) {
     return res
       .status(200)
       .json(Users.map((user) => ({ username: user.username })));
-  } else if (req.method === 'POST') {
-    // Process a POST request
-  } else {
-    // Handle any other HTTP method
   }
 }

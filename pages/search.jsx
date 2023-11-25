@@ -1,14 +1,20 @@
-import { Layout } from '@/components';
-
-export async function getServerSideProps() {
-  // TODO
-  return { props: {} };
-}
+import { Layout, SearchInput, WineBottleList } from '@/components';
+import { useState } from 'react';
 
 export default function Page() {
+  const [search, setSearch] = useState('');
+
   return (
     <Layout title="Search">
-      <div>Search</div>
+      <div>
+        <div className="p-4">
+          <SearchInput
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
+        <WineBottleList search={search} />
+      </div>
     </Layout>
   );
 }

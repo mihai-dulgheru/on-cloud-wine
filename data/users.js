@@ -1,8 +1,10 @@
 const Users = [
   {
     id: 1,
-    username: 'john',
+    email: 'john@email.com',
+    favorites: [1, 2, 3],
     password: 'password',
+    username: 'john',
   },
 ];
 

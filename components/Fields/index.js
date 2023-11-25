@@ -6,4 +6,3 @@ import Password from './Password';
 import Submit from './Submit';
 
 export { Button, Checkbox, Email, Input, Password, Submit };
-

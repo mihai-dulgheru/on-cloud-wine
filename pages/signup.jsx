@@ -13,11 +13,10 @@ const vidaloka = Vidaloka({
 export default function Page() {
   const router = useRouter();
 
-  const handleSubmit = ()=>{
-    alert('Congratulations, u are now on cloud wine ☁️!')
-    router.push(`/login`)
-  }
-
+  const handleSubmit = () => {
+    alert('Congratulations, u are now on cloud wine ☁️!');
+    router.push(`/login`);
+  };
 
   return (
     <main className="flex h-screen w-full flex-col bg-white">
@@ -66,14 +65,21 @@ export default function Page() {
                   />
                 </Fieldset>
                 <Fieldset name="gdpr" fieldsetClassname="ml-1">
-                  <div className="flex text-center justify-center">
-                    <Field id="gdpr" name="gdpr" as={Checkbox} className="w-4" />
-                    <label htmlFor="gdpr" className="text-white mt-1.5">
-                      <p className='text-black'>I agree with the terms and conditions </p>
+                  <div className="flex justify-center text-center">
+                    <Field
+                      id="gdpr"
+                      name="gdpr"
+                      as={Checkbox}
+                      className="w-4"
+                    />
+                    <label htmlFor="gdpr" className="mt-1.5 text-white">
+                      <p className="text-black">
+                        I agree with the terms and conditions{' '}
+                      </p>
                     </label>
                   </div>
                 </Fieldset>
-                <Submit className="button full primary mx-auto rounded-full bg-[#A10028] px-12 py-2 text-lg font-semibold text-white -mt-1">
+                <Submit className="button full primary mx-auto -mt-1 rounded-full bg-[#A10028] px-12 py-2 text-lg font-semibold text-white">
                   REGISTER
                 </Submit>
               </Form>
