@@ -1,5 +1,5 @@
 .button {
-  @apply relative rounded inline-block cursor-pointer;
+  @apply relative inline-block cursor-pointer rounded;
 }
 
 .button:hover {
@@ -28,11 +28,11 @@ button:disabled {
 
 .button.full,
 .button.square {
-  @apply border-2 py-1 px-4 text-sm font-medium;
+  @apply border-2 px-4 py-1 text-sm font-medium;
 }
 
 .button.mini {
-  @apply border py-1 px-3 text-sm bg-white;
+  @apply border bg-white px-3 py-1 text-sm;
 }
 
 .button.full.primary {
@@ -63,13 +63,13 @@ button:disabled {
 }
 
 .cancel {
-  @apply px-5 py-1.5 bg-white border-2 border-gray-200 text-gray-600 text-base rounded-md !important;
+  @apply rounded-md border-2 border-gray-200 bg-white px-5 py-1.5 text-base text-gray-600 !important;
 }
 
 .confirm {
-  @apply px-5 py-1.5 bg-primary border-2 border-primary text-base text-white rounded-md !important;
+  @apply bg-primary border-primary rounded-md border-2 px-5 py-1.5 text-base text-white !important;
 }
 
 .delete {
-  @apply px-5 py-1.5 bg-white border-2 border-red-400 text-base text-red-600 rounded-md !important;
+  @apply rounded-md border-2 border-red-400 bg-white px-5 py-1.5 text-base text-red-600 !important;
 }

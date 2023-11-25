@@ -18,14 +18,12 @@
     transform: translateX(-100%);
   }
 
-  #menu:checked~.nav-menu {
+  #menu:checked ~ .nav-menu {
     transform: translateX(0%);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   }
 
-
-  #menu:checked~.nav-menu .menu-item {
-
+  #menu:checked ~ .nav-menu .menu-item {
     opacity: 1;
     transform: translateX(0%);
   }
@@ -36,7 +34,7 @@
     visibility: hidden;
   }
 
-  #menu:checked~.backdrop {
+  #menu:checked ~ .backdrop {
     visibility: visible;
   }
 }
@@ -65,5 +63,7 @@
 
 /* It always should be the last class in this file */
 .nav-menu-transition {
-  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out !important;
+  transition:
+    transform 0.3s ease-in-out,
+    width 0.3s ease-in-out !important;
 }

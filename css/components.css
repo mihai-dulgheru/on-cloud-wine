@@ -1,5 +1,5 @@
 .tooltip > .arrow:before {
-  @apply border-b-4 border-primary;
+  @apply border-primary border-b-4;
 }
 .tooltip > .tooltip-inner {
   @apply bg-primary;

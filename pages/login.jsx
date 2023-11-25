@@ -3,22 +3,24 @@ import { Input, Password, Submit } from '@/components/Fields';
 import { Fieldset } from '@/components/Formik';
 import { initialValues, validationSchema } from '@/models/login';
 import { Field, Form, Formik } from 'formik';
+import { Vidaloka } from 'next/font/google';
 
-import { Vidaloka } from 'next/font/google'
 const vidaloka = Vidaloka({
   weight: '400',
   subsets: ['latin'],
-})
+});
 
 export default function Page() {
   return (
     <Layout>
-      <section className="w-full bg-[url('/images/wine-glass.jpg')] bg-cover flex flex-col text-black justify-around">
-        <div className="text-black flex flex-col justify-center items-center">
+      <section className="flex w-full flex-col justify-around bg-[url('/images/wine-glass.jpg')] bg-cover text-black">
+        <div className="flex flex-col items-center justify-center text-black">
           <span className="font-semibold">ON CLOUD</span>
-          <h1 className={`text-[#A10028] text-6xl ${vidaloka.className}`}>WINE</h1>
+          <h1 className={`text-6xl text-[#A10028] ${vidaloka.className}`}>
+            WINE
+          </h1>
         </div>
-        <div className="text-black text-center mb-14">
+        <div className="mb-14 text-center text-black">
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -30,7 +32,7 @@ export default function Page() {
                   id="username"
                   name="username"
                   as={Input}
-                  className="outline-none border-b border-[#A10028] w-3/4 py-2 pl-2 bg-transparent text-lg"
+                  className="w-3/4 border-b border-[#A10028] bg-transparent py-2 pl-2 text-lg outline-none"
                   placeholder="Username"
                 />
               </Fieldset>
@@ -40,19 +42,19 @@ export default function Page() {
                   id="password"
                   name="password"
                   as={Password}
-                  className="outline-none border-b border-[#A10028] w-3/4 py-2 pl-2 bg-transparent text-lg"
+                  className="w-3/4 border-b border-[#A10028] bg-transparent py-2 pl-2 text-lg outline-none"
                   placeholder="Password"
                 />
               </Fieldset>
-              <Submit className="button full primary bg-[#A10028] text-white py-2 px-12 text-lg rounded-full mx-auto font-semibold">
+              <Submit className="button full primary mx-auto rounded-full bg-[#A10028] px-12 py-2 text-lg font-semibold text-white">
                 LOGIN
               </Submit>
             </Form>
           </Formik>
 
-          <p className="font-semibold mt-10">
+          <p className="mt-10 font-semibold">
             Don&apos;t have an account?{' '}
-            <Link href="/register" className="underline font-bold">
+            <Link href="/register" className="font-bold underline">
               Register here!
             </Link>
           </p>
