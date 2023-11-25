@@ -8,7 +8,7 @@ export async function getServerSideProps() {
 
 export default function Page({ users }) {
   return (
-    <Layout>
+    <Layout title="Login">
       <ul>
         {users.map((user) => (
           <li key={user.username}>{user.username}</li>
