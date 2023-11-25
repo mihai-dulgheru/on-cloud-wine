@@ -1,9 +1,9 @@
-import { Link } from '@/components';
-import { Input, Password, Submit } from '@/components/Fields';
+import { Checkbox, Email, Input, Password, Submit } from '@/components/Fields';
 import { Fieldset } from '@/components/Formik';
-import { initialValues, validationSchema } from '@/models/login';
+import { initialValues, validationSchema } from '@/models/signup';
 import { Field, Form, Formik } from 'formik';
 import { Vidaloka } from 'next/font/google';
+import { useRouter } from 'next/router';
 
 const vidaloka = Vidaloka({
   weight: '400',
@@ -11,6 +11,14 @@ const vidaloka = Vidaloka({
 });
 
 export default function Page() {
+  const router = useRouter();
+
+  const handleSubmit = ()=>{
+    alert('Congratulations, u are now on cloud wine ☁️!')
+    router.push(`/login`)
+  }
+
+
   return (
     <main className="flex h-screen w-full flex-col bg-white">
       <div className="flex flex-1 flex-col">
@@ -21,11 +29,11 @@ export default function Page() {
               WINE
             </h1>
           </div>
-          <div className="mb-14 text-center text-black">
+          <div className="text-center text-black">
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
-              onSubmit={() => alert('U have been logged in')}
+              onSubmit={handleSubmit}
             >
               <Form className="flex flex-col space-y-4">
                 <Fieldset name="username">
@@ -38,6 +46,16 @@ export default function Page() {
                   />
                 </Fieldset>
 
+                <Fieldset name="email">
+                  <Field
+                    id="email"
+                    name="email"
+                    as={Email}
+                    className="w-3/4 border-b border-[#A10028] bg-transparent py-2 pl-2 text-lg outline-none"
+                    placeholder="E-mail"
+                  />
+                </Fieldset>
+
                 <Fieldset name="password">
                   <Field
                     id="password"
@@ -47,18 +65,19 @@ export default function Page() {
                     placeholder="Password"
                   />
                 </Fieldset>
-                <Submit className="button full primary mx-auto rounded-full bg-[#A10028] px-12 py-2 text-lg font-semibold text-white">
-                  LOGIN
+                <Fieldset name="gdpr" fieldsetClassname="ml-1">
+                  <div className="flex text-center justify-center">
+                    <Field id="gdpr" name="gdpr" as={Checkbox} className="w-4" />
+                    <label htmlFor="gdpr" className="text-white mt-1.5">
+                      <p className='text-black'>I agree with the terms and conditions </p>
+                    </label>
+                  </div>
+                </Fieldset>
+                <Submit className="button full primary mx-auto rounded-full bg-[#A10028] px-12 py-2 text-lg font-semibold text-white -mt-1">
+                  REGISTER
                 </Submit>
               </Form>
             </Formik>
-
-            <p className="mt-10 font-semibold">
-              Don&apos;t have an account?{' '}
-              <Link href="/signup" className="font-bold underline">
-                Register here!
-              </Link>
-            </p>
           </div>
         </section>
       </div>
