@@ -5,7 +5,7 @@ export async function getServerSideProps() {
   return { props: {} };
 }
 
-export default function Page({ users }) {
+export default function Page() {
   return (
     <Layout title="Search">
       <div>Search</div>
