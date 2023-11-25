@@ -10,10 +10,14 @@ import WineBottlesCategoryCard from './WineBottlesCategoryCard';
 import WineDetails from './WineDetails';
 
 export {
-  Layout, Link,
-  Logo, Menu,
-  SearchInput, StarsRating, WineBottleCard,
+  Layout,
+  Link,
+  Logo,
+  Menu,
+  SearchInput,
+  StarsRating,
+  WineBottleCard,
   WineBottleList,
-  WineBottlesCategoryCard, WineDetails
+  WineBottlesCategoryCard,
+  WineDetails,
 };
-

@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
 
-const StarsRating = ({rating}) => {
+const StarsRating = ({ rating }) => {
   const clampedRating = Math.min(5, Math.max(0, Math.round(rating)));
   const stars = Array.from({ length: 5 }, (_, index) => index < clampedRating);
 
@@ -17,7 +17,7 @@ const StarsRating = ({rating}) => {
         />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default StarsRating
+export default StarsRating;

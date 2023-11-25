@@ -24,7 +24,7 @@ export default function Page() {
         <section className="flex w-full flex-1 flex-col justify-around bg-[url('/images/wine-glass.jpg')] bg-cover text-black">
           <div className="flex flex-col items-center justify-center text-black">
             <span className="font-semibold">ON CLOUD</span>
-            <h1 className={`text-6xl text-[#A10028] ${vidaloka.className}`}>
+            <h1 className={`text-6xl text-secondary-500 ${vidaloka.className}`}>
               WINE
             </h1>
           </div>
@@ -40,7 +40,7 @@ export default function Page() {
                     id="username"
                     name="username"
                     as={Input}
-                    className="w-3/4 border-b border-[#A10028] bg-transparent py-2 pl-2 text-lg outline-none"
+                    className="w-3/4 border-b border-secondary-500 bg-transparent py-2 pl-2 text-lg outline-none"
                     placeholder="Username"
                   />
                 </Fieldset>
@@ -50,7 +50,7 @@ export default function Page() {
                     id="email"
                     name="email"
                     as={Email}
-                    className="w-3/4 border-b border-[#A10028] bg-transparent py-2 pl-2 text-lg outline-none"
+                    className="w-3/4 border-b border-secondary-500 bg-transparent py-2 pl-2 text-lg outline-none"
                     placeholder="E-mail"
                   />
                 </Fieldset>
@@ -60,7 +60,7 @@ export default function Page() {
                     id="password"
                     name="password"
                     as={Password}
-                    className="w-3/4 border-b border-[#A10028] bg-transparent py-2 pl-2 text-lg outline-none"
+                    className="w-3/4 border-b border-secondary-500 bg-transparent py-2 pl-2 text-lg outline-none"
                     placeholder="Password"
                   />
                 </Fieldset>
@@ -79,7 +79,7 @@ export default function Page() {
                     </label>
                   </div>
                 </Fieldset>
-                <Submit className="button full primary mx-auto -mt-1 rounded-full bg-[#A10028] px-12 py-2 text-lg font-semibold text-white">
+                <Submit className="button full primary mx-auto -mt-1 rounded-full bg-secondary-500 px-12 py-2 text-lg font-semibold text-white">
                   REGISTER
                 </Submit>
               </Form>

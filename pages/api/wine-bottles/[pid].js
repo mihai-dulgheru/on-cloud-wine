@@ -1,10 +1,17 @@
-import { WineBottles } from "@/data"
+import { WineBottles } from '@/data';
 
 export default function handler(req, res) {
-  const { pid } = req.query
-
-  const wine = WineBottles.filter(wineBottle => wineBottle.id === pid);
-  console.log(wine)
-
-  return res.json(wine);
+  if (req.method === 'GET') {
+    const { pid } = req.query;
+    if (!pid) {
+      res.status(400).json({ error: 'Missing pid' });
+    }
+    const wineBottle = WineBottles.find(
+      (wineBottle) => wineBottle.id.toString() === pid.toString()
+    );
+    if (!wineBottle) {
+      res.status(404).json({ error: 'Wine bottle not found' });
+    }
+    res.status(200).json(wineBottle);
+  }
 }

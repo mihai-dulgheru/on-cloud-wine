@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 const fullStar = (
   <svg
@@ -24,8 +25,17 @@ const emptyStar = (
 );
 
 const WineBottleCard = ({ wineBottle }) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/search/${wineBottle.id}`);
+  };
+
   return (
-    <div className="flex flex-row items-center justify-between rounded-2xl bg-white p-4 pl-0 shadow-lg">
+    <div
+      className="flex flex-row items-center justify-between rounded-2xl bg-white p-4 pl-0 shadow-lg"
+      onClick={handleClick}
+    >
       <div className="flex h-full flex-row items-start justify-start">
         <Image
           src={`/images/${wineBottle.picture}`}
