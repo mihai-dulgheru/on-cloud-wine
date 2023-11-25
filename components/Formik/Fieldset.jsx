@@ -16,9 +16,6 @@ const Fieldset = ({ label, help, name, children }) => {
         </label>
       )}
       {children}
-      {/* TODO: should render with visibility hidden. content should change if hasError
-          This way we are making sure elements do not jiggle to make space on the page
-          for error messages */}
       <div className="form-help text-secondary first-letter text-sm">
         {hasError ? get(errors, name) : help}
       </div>
