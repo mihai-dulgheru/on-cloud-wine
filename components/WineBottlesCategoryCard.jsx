@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const WineBottlesCategoryCard = ({ wineBottlesCategory }) => {
   return (
-    <div className="bg-primary-500 flex items-center gap-4 rounded-2xl px-6 py-8 shadow-lg">
+    <div className="flex items-center gap-4 rounded-2xl bg-primary-500 px-6 py-8 shadow-lg">
       <div className="overflow-hidden rounded-xl bg-white py-4 shadow-md">
         <Image
           src={`/images/${wineBottlesCategory.image}`}
