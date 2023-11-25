@@ -1,6 +1,7 @@
 import Layout from './Layout';
+import Link from './Link';
 import Logo from './Logo';
 import Menu from './Menu';
-import Link from '@/components/Link';
+import WineBottlesCategoryCard from './WineBottlesCategoryCard';
 
-export { Layout, Logo, Menu, Link };
+export { Layout, Link, Logo, Menu, WineBottlesCategoryCard };

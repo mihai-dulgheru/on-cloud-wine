@@ -2,7 +2,7 @@ const WineBottles = [
   {
     id: 1,
     name: 'Domaine de la Vallée',
-    picture: 'domaine-de-la-vallee.jpg',
+    picture: 'domaine-de-la-vallee.png',
     description: 'Bordeaux Blend',
     classification: 'Red Bordeaux',
     type: 'Red',
@@ -24,7 +24,7 @@ const WineBottles = [
   {
     id: 2,
     name: 'Castello di Amore',
-    picture: 'castello-di-amore.jpg',
+    picture: 'castello-di-amore.png',
     description: 'Chianti Classico',
     classification: 'DOCG',
     type: 'Red',
@@ -46,7 +46,7 @@ const WineBottles = [
   {
     id: 3,
     name: 'Silver Creek Reserve',
-    picture: 'silver-creek-reserve.jpg',
+    picture: 'silver-creek-reserve.png',
     description: 'Napa Valley Reserve',
     classification: 'Cabernet Sauvignon',
     type: 'Red',
@@ -68,7 +68,7 @@ const WineBottles = [
   {
     id: 4,
     name: 'Villa de Luna',
-    picture: 'villa-de-luna.jpg',
+    picture: 'villa-de-luna.png',
     description: 'Rioja Reserva',
     classification: 'DOCa',
     type: 'Red',
@@ -90,7 +90,7 @@ const WineBottles = [
   {
     id: 5,
     name: 'Gold Coast Estates',
-    picture: 'gold-coast-estates.jpg',
+    picture: 'gold-coast-estates.png',
     description: 'Sauvignon Blanc',
     classification: 'White',
     type: 'White',
@@ -112,7 +112,7 @@ const WineBottles = [
   {
     id: 6,
     name: 'Mountaineer Ridge',
-    picture: 'mountaineer-ridge.jpg',
+    picture: 'mountaineer-ridge.png',
     description: 'Pinot Noir',
     classification: 'Reserve',
     type: 'Red',
@@ -134,7 +134,7 @@ const WineBottles = [
   {
     id: 7,
     name: 'Ocean Breeze Vineyards',
-    picture: 'ocean-breeze-vineyards.jpg',
+    picture: 'ocean-breeze-vineyards.png',
     description: 'Chardonnay',
     classification: 'Unoaked',
     type: 'White',
@@ -156,7 +156,7 @@ const WineBottles = [
   {
     id: 8,
     name: 'Sunset Ridge Winery',
-    picture: 'sunset-ridge-winery.jpg',
+    picture: 'sunset-ridge-winery.png',
     description: 'Zinfandel',
     classification: 'Old Vine',
     type: 'Red',
@@ -178,7 +178,7 @@ const WineBottles = [
   {
     id: 9,
     name: 'Villa Serena',
-    picture: 'villa-serena.jpg',
+    picture: 'villa-serena.png',
     description: 'Malbec',
     classification: 'Reserva',
     type: 'Red',
@@ -200,7 +200,7 @@ const WineBottles = [
   {
     id: 10,
     name: 'Mystic Valley Estates',
-    picture: 'mystic-valley-estates.jpg',
+    picture: 'mystic-valley-estates.png',
     description: 'Syrah',
     classification: 'Single Vineyard',
     type: 'Red',
