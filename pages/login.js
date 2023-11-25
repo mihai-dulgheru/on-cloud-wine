@@ -5,15 +5,21 @@ import { Fieldset } from '@/components/Formik';
 import { initialValues, validationSchema } from '@/models/login';
 import { Field, Form, Formik } from 'formik';
 
+import { Vidaloka } from 'next/font/google'
+const vidaloka = Vidaloka({
+  weight: '400',
+  subsets: ['latin'],
+})
+
 export default function Page() {
   return (
     <Layout>
       <section className="w-full relative flex flex-col min-h-screen text-black justify-around">
-        <div className="text-black flex flex-col justify-center items-center z-10">
+        <div className="text-black flex flex-col justify-center items-center">
           <span className="font-semibold">ON CLOUD</span>
-          <h1 className="text-[#A10028] text-6xl">WINE</h1>
+          <h1 className={`text-[#A10028] text-6xl ${vidaloka.className}`}>WINE</h1>
         </div>
-        <div className="text-black text-center">
+        <div className="text-black text-center mb-24">
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -25,7 +31,7 @@ export default function Page() {
                   id="username"
                   name="username"
                   as={Input}
-                  className="outline-none border-b border-[#A10028] w-3/4 py-2"
+                  className="outline-none border-b border-[#A10028] w-3/4 py-2 pl-2"
                   placeholder="Username"
                 />
               </Fieldset>
@@ -35,7 +41,7 @@ export default function Page() {
                   id="password"
                   name="password"
                   as={Password}
-                  className="outline-none border-b border-[#A10028] w-3/4 py-2"
+                  className="outline-none border-b border-[#A10028] w-3/4 py-2 pl-2"
                   placeholder="Password"
                 />
               </Fieldset>
@@ -45,7 +51,7 @@ export default function Page() {
             </Form>
           </Formik>
 
-          <p className="font-semibold mt-20">
+          <p className="font-semibold mt-10">
             Don&apos;t have an account?{' '}
             <Link href="/register" className="underline font-bold">
               Register here!
