@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Inria_Sans } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
 import '../styles/globals.css';
 
 const inriaSans = Inria_Sans({
@@ -14,6 +15,7 @@ export default function MyApp({ Component, pageProps }) {
     <QueryClientProvider client={queryClient}>
       <main className={inriaSans.className}>
         <Component {...pageProps} />
+        <Toaster />
       </main>
     </QueryClientProvider>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Password = (props) => {
   const [showPassword, toggle] = useState(false);

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Checkbox = ({ children, className, ...props }) => {
   return (
     <div className="mt-2 ">
