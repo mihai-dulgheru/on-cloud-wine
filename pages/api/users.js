@@ -6,4 +6,6 @@ export default function handler(req, res) {
       .status(200)
       .json(Users.map((user) => ({ username: user.username })));
   }
+
+  res.status(405).end(); // Method Not Allowed
 }

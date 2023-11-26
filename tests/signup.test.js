@@ -94,7 +94,7 @@ describe('Signup', function () {
       body: JSON.stringify({
         username: 'test2',
         email: 'test2@email.com',
-        password: 'test',
+        password: 'validpassword',
       }),
     });
     const data = await response.json();

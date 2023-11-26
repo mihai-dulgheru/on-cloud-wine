@@ -1,4 +1,4 @@
+import falsy from './falsy';
 import filterWineBottles from './filter-wine-bottles';
-import isEmail from './is-email';
 
-export { filterWineBottles, isEmail };
+export { falsy, filterWineBottles };

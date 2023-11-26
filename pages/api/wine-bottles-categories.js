@@ -20,4 +20,6 @@ export default function handler(req, res) {
     });
     return res.status(200).json(wineBottlesCategories);
   }
+
+  res.status(405).end(); // Method Not Allowed
 }

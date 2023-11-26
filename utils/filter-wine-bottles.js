@@ -1,13 +1,16 @@
 const { WineBottles } = require('@/data');
 
 const filterWineBottles = (search) => {
-  // TODO: Implement this function
-  /**
-   const filteredWineBottles = WineBottles.filter((wineBottle) =>
-     wineBottle.name.toLowerCase().includes(search.toLowerCase())
-   );
-   */
-  return WineBottles;
+  if (!search) {
+    return WineBottles;
+  }
+
+  const lowercasedSearch = search.toLowerCase();
+  const filteredWineBottles = WineBottles.filter(({ name }) =>
+    name.toLowerCase().includes(lowercasedSearch)
+  );
+
+  return filteredWineBottles;
 };
 
 module.exports = filterWineBottles;
