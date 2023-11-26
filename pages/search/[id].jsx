@@ -1,7 +1,7 @@
 import { Layout, StarsRating, WineDetails } from '@/components';
 import { Button } from '@/components/Fields';
+import { useMutation } from '@tanstack/react-query';
 import Image from 'next/image';
-import { Cart } from '@/data';
 import toast from 'react-hot-toast';
 
 export async function getServerSideProps({ query }) {
@@ -38,13 +38,37 @@ export default function Page({ wineBottle }) {
     'stock',
   ];
 
-  const handleClicked = (wine) => {
-    const foundItem = Cart.items.find((item) => item.id === wine.id);
+  const mutation = useMutation({
+    mutationFn: async (payload) => {
+      const res = await fetch('/api/cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.message);
+      }
+      return data;
+    },
+    onSuccess: (data) => {
+      toast.success(data.message);
+    },
+    onError: (err) => {
+      toast.error(err.message);
+    },
+  });
 
-    foundItem
-      ? (foundItem.quantity += 1) && toast.success('Quantity updated: +1')
-      : Cart.items.push({ ...wine, amount: 1 }) &&
-        toast.success('Wine added to cart 🛒');
+  const handleClicked = (wineBottle) => {
+    const payload = {
+      id: wineBottle?.id,
+      name: wineBottle?.name,
+      picture: wineBottle?.picture,
+      price: wineBottle?.price,
+    };
+    return mutation.mutateAsync(payload);
   };
 
   return (
@@ -59,10 +83,10 @@ export default function Page({ wineBottle }) {
             className="col-span-2 row-span-3 -ml-16"
           />
           <div className="flex flex-col">
-            <h2 className="-ml-40 -mt-1 whitespace-nowrap text-end text-2xl font-bold text-secondary-500">
+            <h2 className="text-secondary-500 -ml-40 -mt-1 whitespace-nowrap text-end text-2xl font-bold">
               {wineBottle?.name}
             </h2>
-            <p className="text-end text-xl font-semibold italic text-secondary-500">
+            <p className="text-secondary-500 text-end text-xl font-semibold italic">
               {wineBottle?.price} lei
             </p>
             <span className="-ml-24 mt-8 w-60 justify-self-center">
@@ -90,15 +114,9 @@ export default function Page({ wineBottle }) {
           </div>
 
           <Button
-            className="button full primary mx-auto rounded-3xl bg-secondary-500 px-20 py-4 text-lg font-semibold text-white"
-            onClick={() =>
-              handleClicked({
-                id: wineBottle?.id,
-                name: wineBottle?.name,
-                picture: wineBottle?.picture,
-                price: wineBottle?.price,
-              })
-            }
+            className="button full primary bg-secondary-500 mx-auto rounded-3xl px-20 py-4 text-lg font-semibold text-white"
+            disabled={mutation.isLoading}
+            onClick={() => handleClicked(wineBottle)}
           >
             ADD TO CART
           </Button>
