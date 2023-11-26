@@ -1,7 +1,6 @@
 import { Checkbox, Email, Input, Password, Submit } from '@/components/Fields';
 import { Fieldset } from '@/components/Formik';
 import { initialValues, validationSchema } from '@/models/signup';
-import { isEmail } from '@/utils';
 import { useMutation } from '@tanstack/react-query';
 import { Field, Form, Formik } from 'formik';
 import { Vidaloka } from 'next/font/google';
@@ -40,12 +39,23 @@ export default function Page() {
     },
   });
 
-  const handleSubmit = (values) => {
+  const handleSubmit = async (values) => {
     const { email } = values;
-    if (!email || !isEmail(email)) {
-      toast.error('Please enter a valid email address');
+    const res = await fetch('/api/verify-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      toast.error(data.message);
     } else {
-      return mutation.mutateAsync(values);
+      const { valid } = data;
+      if (!valid) {
+        toast.error('Please enter a valid email address');
+      } else {
+        return mutation.mutateAsync(values);
+      }
     }
   };
 

@@ -1,11 +1,6 @@
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
 
-const isEmail = (email) => {
-  // TODO: Implement this function
-  return;
-};
-
 describe('isEmail function', function () {
   // Returns true for valid email addresses with providers gmail, yahoo, and hotmail
   it('should return true for valid email addresses with providers gmail, yahoo, and hotmail', async function () {
@@ -13,10 +8,16 @@ describe('isEmail function', function () {
     const email = 'test@gmail.com';
 
     // Act
-    const result = isEmail(email);
+    const result = await fetch('http://localhost:3000/api/verify-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
 
     // Assert
-    expect(result).to.be.true;
+    expect(result.status).to.equal(200);
+    const data = await result.json();
+    expect(data.valid).to.be.true;
   });
 
   // Returns false for invalid email addresses
@@ -25,10 +26,16 @@ describe('isEmail function', function () {
     const email = 'invalidemail';
 
     // Act
-    const result = isEmail(email);
+    const result = await fetch('http://localhost:3000/api/verify-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
 
     // Assert
-    expect(result).to.be.false;
+    expect(result.status).to.equal(200);
+    const data = await result.json();
+    expect(data.valid).to.be.false;
   });
 
   // Returns false for valid email addresses with providers other than gmail, yahoo, and hotmail
@@ -37,10 +44,16 @@ describe('isEmail function', function () {
     const email = 'test@example.com';
 
     // Act
-    const result = isEmail(email);
+    const result = await fetch('http://localhost:3000/api/verify-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
 
     // Assert
-    expect(result).to.be.false;
+    expect(result.status).to.equal(200);
+    const data = await result.json();
+    expect(data.valid).to.be.false;
   });
 
   // Returns false for empty email string
@@ -49,10 +62,16 @@ describe('isEmail function', function () {
     const email = '';
 
     // Act
-    const result = isEmail(email);
+    const result = await fetch('http://localhost:3000/api/verify-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
 
     // Assert
-    expect(result).to.be.false;
+    expect(result.status).to.equal(200);
+    const data = await result.json();
+    expect(data.valid).to.be.false;
   });
 
   // Returns false for email string with only spaces
@@ -61,10 +80,16 @@ describe('isEmail function', function () {
     const email = '     ';
 
     // Act
-    const result = isEmail(email);
+    const result = await fetch('http://localhost:3000/api/verify-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
 
     // Assert
-    expect(result).to.be.false;
+    expect(result.status).to.equal(200);
+    const data = await result.json();
+    expect(data.valid).to.be.false;
   });
 
   // Returns false for email string without '@' character
@@ -73,9 +98,15 @@ describe('isEmail function', function () {
     const email = 'testexample.com';
 
     // Act
-    const result = isEmail(email);
+    const result = await fetch('http://localhost:3000/api/verify-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
 
     // Assert
-    expect(result).to.be.false;
+    expect(result.status).to.equal(200);
+    const data = await result.json();
+    expect(data.valid).to.be.false;
   });
 });

@@ -19,6 +19,8 @@ describe('Add to favorites', function () {
 
     // Assert
     expect(result.status).to.equal(400);
+    const data = await result.json();
+    expect(data.message).to.equal('Missing id');
   });
 
   // Wine bottle not found
@@ -38,6 +40,8 @@ describe('Add to favorites', function () {
 
     // Assert
     expect(result.status).to.equal(404);
+    const data = await result.json();
+    expect(data.message).to.equal('Wine bottle not found');
   });
 
   // Add to favorites
