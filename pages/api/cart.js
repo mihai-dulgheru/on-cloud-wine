@@ -18,9 +18,9 @@ export default function handler(req, res) {
     //   return res.status(400).json({ message: 'Missing wine price' });
     // }
 
-    // const foundItem = Cart.items.find((item) => item.id === wine.id);
-    // if (foundItem) {
-    //   foundItem.quantity += 1;
+    // const found = Cart.items.find((item) => item.id === wine.id);
+    // if (found) {
+    //   found.quantity += 1;
     //   return res.status(200).json({ message: 'Quantity updated: +1' });
     // } else {
     //   Cart.items.push({ ...wine, quantity: 1 });

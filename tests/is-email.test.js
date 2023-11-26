@@ -8,7 +8,7 @@ const isEmail = (email) => {
 
 describe('isEmail function', function () {
   // Returns true for valid email addresses with providers gmail, yahoo, and hotmail
-  it('should return true for valid email addresses with providers gmail, yahoo, and hotmail', function () {
+  it('should return true for valid email addresses with providers gmail, yahoo, and hotmail', async function () {
     // Arrange
     const email = 'test@gmail.com';
 
@@ -20,7 +20,7 @@ describe('isEmail function', function () {
   });
 
   // Returns false for invalid email addresses
-  it('should return false for invalid email addresses', function () {
+  it('should return false for invalid email addresses', async function () {
     // Arrange
     const email = 'invalidemail';
 
@@ -32,7 +32,7 @@ describe('isEmail function', function () {
   });
 
   // Returns false for valid email addresses with providers other than gmail, yahoo, and hotmail
-  it('should return false for valid email addresses with providers other than gmail, yahoo, and hotmail', function () {
+  it('should return false for valid email addresses with providers other than gmail, yahoo, and hotmail', async function () {
     // Arrange
     const email = 'test@example.com';
 
@@ -44,7 +44,7 @@ describe('isEmail function', function () {
   });
 
   // Returns false for empty email string
-  it('should return false for empty email string', function () {
+  it('should return false for empty email string', async function () {
     // Arrange
     const email = '';
 
@@ -56,7 +56,7 @@ describe('isEmail function', function () {
   });
 
   // Returns false for email string with only spaces
-  it('should return false for email string with only spaces', function () {
+  it('should return false for email string with only spaces', async function () {
     // Arrange
     const email = '     ';
 
@@ -68,7 +68,7 @@ describe('isEmail function', function () {
   });
 
   // Returns false for email string without '@' character
-  it("should return false for email string without '@' character", function () {
+  it("should return false for email string without '@' character", async function () {
     // Arrange
     const email = 'testexample.com';
 
