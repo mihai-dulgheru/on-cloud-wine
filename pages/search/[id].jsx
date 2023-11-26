@@ -1,6 +1,8 @@
 import { Layout, StarsRating, WineDetails } from '@/components';
 import { Button } from '@/components/Fields';
+import { useMutation } from '@tanstack/react-query';
 import Image from 'next/image';
+import toast from 'react-hot-toast';
 
 export async function getServerSideProps({ query }) {
   const { id } = query;
@@ -36,8 +38,37 @@ export default function Page({ wineBottle }) {
     'stock',
   ];
 
-  const handleClicked = (wine) => {
-    alert(`Vinul ${wine.name} a fost adaugat in coș`);
+  const mutation = useMutation({
+    mutationFn: async (payload) => {
+      const res = await fetch('/api/cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.message);
+      }
+      return data;
+    },
+    onSuccess: (data) => {
+      toast.success(data.message);
+    },
+    onError: (err) => {
+      toast.error(err.message);
+    },
+  });
+
+  const handleClicked = (wineBottle) => {
+    const payload = {
+      id: wineBottle?.id,
+      name: wineBottle?.name,
+      picture: wineBottle?.picture,
+      price: wineBottle?.price,
+    };
+    return mutation.mutateAsync(payload);
   };
 
   return (
@@ -83,15 +114,9 @@ export default function Page({ wineBottle }) {
           </div>
 
           <Button
-            className="button full primary mx-auto rounded-3xl bg-secondary-500 px-20 py-4 text-lg font-semibold text-white"
-            onClick={() =>
-              handleClicked({
-                amount: 1,
-                id: wineBottle?.id,
-                name: wineBottle?.name,
-                price: wineBottle?.price,
-              })
-            }
+            className="button full primary bg-secondary-500 mx-auto rounded-3xl px-20 py-4 text-lg font-semibold text-white"
+            disabled={mutation.isLoading}
+            onClick={() => handleClicked(wineBottle)}
           >
             ADD TO CART
           </Button>
