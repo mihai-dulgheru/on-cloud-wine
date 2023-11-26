@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 
 const StarsRating = ({ rating }) => {
   const clampedRating = Math.min(5, Math.max(0, Math.round(rating)));

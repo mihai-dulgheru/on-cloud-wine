@@ -1,5 +1,3 @@
-import { Cart } from '@/data';
-
 export default function handler(req, res) {
   if (req.method === 'POST') {
     // TODO: Implement login

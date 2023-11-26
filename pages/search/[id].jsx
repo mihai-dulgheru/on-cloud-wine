@@ -114,7 +114,7 @@ export default function Page({ wineBottle }) {
           </div>
 
           <Button
-            className="button full primary bg-secondary-500 mx-auto rounded-3xl px-20 py-4 text-lg font-semibold text-white"
+            className="button full primary mx-auto rounded-3xl bg-secondary-500 px-20 py-4 text-lg font-semibold text-white"
             disabled={mutation.isLoading}
             onClick={() => handleClicked(wineBottle)}
           >
